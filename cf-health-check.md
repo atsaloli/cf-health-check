@@ -67,7 +67,7 @@ This document is based on the following best-practice guides:
 
 ### Misc.
 - Start with [simple prototypes](http://evolvethinking.com/cfengine-best-practices-testing/).
-- [Don't maintain cron jobs - use CFEngine's time classes. [Never manage more than one cron job](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-manage-more-than-one-cron-job)
+- Don't maintain cron jobs - use CFEngine's time classes. [Never manage more than one cron job](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-manage-more-than-one-cron-job)
 - Separate data from policy. http://evolvethinking.com/cfengine-best-practices-part-2/
 
 
