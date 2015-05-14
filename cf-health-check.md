@@ -89,7 +89,7 @@ Based on our experience.
 - Don't put secrets in your policy. Use cf-keycrypt, a password vault or GPG to secure your secrets.
 
 ## Section IV
-Summary of (Neil's Best Practices series)[Evolve Thinking's Best Practices][3]
+[Evolve Thinking's Best Practices][3]
 
 ````
 ### Testing Best Practices
