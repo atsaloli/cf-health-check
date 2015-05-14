@@ -93,14 +93,50 @@ Section III is based on our experience.
 
 ## TODO
 
-Neil Watson suggested:
- 
-Review [Evolve Thinking's Best Practices][3] to see what should be included here.
+Neil Watson suggested we review [Evolve Thinking's Best Practices][3] to see what should be included here.
 
-Regarding the writing style. The question format makes a passive voice
-style, and some of the questions are hard for newer users to understand.
-Better to replace all the questions and be assertive telling the user
-what they should do.
+Here is a summary of Neil's Best Practices:
+
+Testing Best Practices
+
+Start with simple prototypes.
+Use editor plugins.
+Check syntax with cf-promises.
+Test formally, including unit tests.
+Test on multiple architectures. Use reporting for scale.
+
+
+
+
+Do not think procedurally, instead declare your intentions as CFEngine promises.
+Less is more, leave decisions on how to do something to CFEngine.
+Focus on the end goal, not the procedure.
+Build reusable bundles.
+Separation data form policy.
+Promise whole files and not just a portion of a file.
+Make your policy readable.
+Use naming conventions for bundles, handles, and classes.
+Use separate promises for file permissions and content.
+Embrace normal ordering.
+Use shell commands sparingly.
+Beware the shell environment.
+Don’t use command promises to cheat.
+Avoid promises that are to broad.
+Don’t mess with update.cf or failsafe.cf
+
+
+Use version control, everywhere.
+CFEngine 2 and 3 can run in parallel for gradual migration.
+Upgrade policy and CFEngine 3 with extensive planning and testing.
+Use splaytime and ifelasped to reduce agent and server load.
+Make CFEngine policy servers in redundant pairs.
+Make policy reliable even when the server is unavailable.
+You can limit selected inputs to agents, but do so with caution.
+
+
+Also Neil suggested dropping the questioning style and changing
+to an assertive style.
+
 
 Nick suggested:
 
