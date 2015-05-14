@@ -23,7 +23,7 @@ Based on [CFEngine 3 Best Practices][1].
 
 ### Policy Style
 - Follow a consistent [policy style](https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-style.html).
-- Keep the scope of the policy in bundles and files to manageable amounts, making it easier to understand. Don't bundle together things that should be separate.
+- Keep your policy in bundles and files to manageable amounts, making it easier to understand. Don't group together things that should be separate.
 - Define your variables in current bundle or in a common generic global bundle as much as possible.
 - Name your bundles so it's clear to a non-expert what the bundles are about.
 - Put classes in common bundles when you need to use them in multiple bundles.
@@ -70,8 +70,8 @@ Based on [CFEngine 3 Best Practices][1].
 Based on [CFEngine Enterprise Best Practices][2].
 
 - Keep your source code in version control.
-- Follow best practices for your version control (e.g. [branch and merge workflows](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)).
-- Setup your hub to automatically update "masterfiles" from the Version Control System.
+- Use [branch and merge workflows](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
+- Setup your hub to update "masterfiles" from Version Control to automate policy distribution.
 - Run your CFEngine Postgres database on a dedicated SSD for best performance.
 - Set "splaytime" to reduce load on your hub.
 
