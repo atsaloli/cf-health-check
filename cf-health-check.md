@@ -94,11 +94,10 @@ Based on our experience.
 ````
 ### Testing Best Practices
 
-Start with simple prototypes.
-Use editor plugins.
-Check syntax with cf-promises.
-Test formally, including unit tests.
-Test on multiple architectures. Use reporting for scale.
+Start with [simple prototypes](http://evolvethinking.com/cfengine-best-practices-testing/).
+[Check syntax](http://evolvethinking.com/cfengine-best-practices-testing/) with cf-promises.
+[Test formally](http://evolvethinking.com/cfengine-best-practices-testing/), including unit tests.
+Test on multiple architectures. Use reporting for [scale](http://evolvethinking.com/cfengine-best-practices-testing/).
 
 
 ### More
@@ -106,7 +105,7 @@ Do not think procedurally, instead declare your intentions as CFEngine promises.
 Less is more, leave decisions on how to do something to CFEngine.
 Focus on the end goal, not the procedure.
 Build reusable bundles.
-Separation data form policy.
+Separation data from policy.
 Promise whole files and not just a portion of a file.
 Make your policy readable.
 Use naming conventions for bundles, handles, and classes.
