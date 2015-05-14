@@ -1,6 +1,6 @@
 # CFEngine Health Check
 
-Purpose: Provide CFEngineers with a compact checklist for assessing CFEngine health.
+*Purpose*: Provide CFEngineers with a compact checklist for assessing CFEngine health.
 
 This document is based on existing guides and is best used after having studied them.
 
