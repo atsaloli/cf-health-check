@@ -2,7 +2,15 @@
 
 **Purpose**: Provide CFEngineers with a compact checklist for assessing CFEngine health.
 
-This document is based on existing guides - we recommend you read them first.
+** Bibliography**: 
+This document is based on existing guides - we recommend you read them first:
+- [cf3bp-archived][1]
+- [enterprise-bp][2]
+- [evolve][3]
+ 
+[1]: https://auth.cfengine.com/archive/manuals/cf3-bestpractice                     "CFEngine 3 Best Pratices (Archived)"
+[2]: https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html "CFEngine Enterprise Best Practices"
+[3]: http://evolvethinking.com/category/cfengine/best-practices/    "Evolve Thinking's Best Practices"
 
 **Contributors**: Aleksey Tsalolikhin, Nick Anderson, Neil Watson
 
