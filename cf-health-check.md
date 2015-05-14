@@ -91,16 +91,18 @@ Section III is based on our experience.
 - (Do) Do you have a process for deploying changes safely?  (Gradual, progressive rollout to ever-increasing numbers of servers to minimize risk)
 - (Do) Do you use CFEngine policy frameworks (NCF or EFL) to add functionality and make it easier and safer for your system administrators to create new policies?
 
------------------------
+## TODO
+
 Neil Watson suggested:
  
+Review [Evolve Thinking's Best Practices][3] to see what should be included here.
+
 Regarding the writing style. The question format makes a passive voice
 style, and some of the questions are hard for newer users to understand.
 Better to replace all the questions and be assertive telling the user
 what they should do.
-------------------------
 
-Nick writes:
+Nick suggested:
 
 Feel free to open a pull request to
 https://github.com/cfengine/documentation/
