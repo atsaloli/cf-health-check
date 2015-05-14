@@ -36,7 +36,7 @@ See https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-sty
 -	(Don’t) Are policy changes made when humans aren’t around (e.g. just before going offline for the weekend?)
 -	(Don’t) Are there shell commands embedded in policy instead of using native CFEngine code which is faster and convergent?
 -	(Don’t) Does your policy maintain cron jobs instead of using CFEngine’s time classes?
--	(Don’t) Do you run CFEngine without lock protection?
+-	(Don’t) Do you run CFEngine without lock protection? (cf-agent -K)
 -	(Do) If you do file searches, do you combine operations to optimize resource use of the system?
 -	(Do) Do you make many small changes rather than one large change to reduce risk?
 -	(Do) Do you use "comment" attributes to explain the intention of your promises?
