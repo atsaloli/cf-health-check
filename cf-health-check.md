@@ -3,7 +3,7 @@
 **Purpose**: Provide CFEngineers with a compact checklist for assessing CFEngine health.
 
 **Bibliography**: 
-This document is based on existing guides - read them first:
+This document is based on the following best-practice  guides - read them first:
 - [CFEngine 3 Best Practices (Archive)][1]
 - [CFEngine Enterprise Best Practices][2]
 - [Evolve Thinking's Best Practices][3]
