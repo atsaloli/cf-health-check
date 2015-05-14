@@ -39,7 +39,7 @@ This document is based on the following best-practice guides:
 
 
 ### Document
-- [Always document the intention of your promises using "comment" attribute.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Always-document-promises)
+- Always document the intention of your promises using ["comment"](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Always-document-promises) attribute.
 - Use "promisees" to document who or what will be impacted by your promises.
 - Use "meta" promises and attributes to document metadata such as who wrote the code, when, etc. (e.g. meta => { "author=John Smith", "version="2.0" }; ) 
 
