@@ -23,7 +23,7 @@ Section I is based on [CFEngine 3 Best Practices][1].
 
 ### Policy Style
 - (Do) Do you follow a consistent policy style?
-See https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-style.html
+See [Policy Style Guide](https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-style.html)
 -	(Do) Is the policy broken down into separate files, keeping the scope of the policy to manageable amounts, making it easier to understand?
 -	(Do) Are variables defined as close to the place where they are used as possible? (in the current bundle, first and foremost; or in some common bundle for generic, global data.  As opposed to in some other agent bundle -- unless you are passing the variable name as a parameter.) 
 -	(Do) Are bundle names meaningful?  Does the name make clear to a non-expert what the bundle is about?
