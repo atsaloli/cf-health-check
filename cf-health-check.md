@@ -25,10 +25,10 @@ Based on [CFEngine 3 Best Practices][1].
 - Follow a consistent [policy style](https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-style.html).
 - Keep your policy in bundles and files to manageable amounts, making it easier to understand. Don't group together things that should be separate. [Arranging files.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Arranging-files) [How to decide when to make a bundle.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#How-to-decide-when-to-make-a-bundle)
 - Use meaningful names for your files and bundles. Make it obvious what they are about. [How to choose and name bundles.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#How-to-choose-and-name-bundles)
-- Define your variables in current bundle or in a common generic global bundle as much as possible.
-- Put classes in common bundles when you need to use them in multiple bundles.
-- Classify your system before making changes to it.
+- Define your variables in current bundle or in a common generic global bundle as much as possible. (When should variables be in common bundles?)[https://auth.cfengine.com/manuals/cf3-bestpractice#When-should-variables-be-in-common-bundles] [When should variables be in local bundles?](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#When-should-variables-be-in-local-bundles)
+- Put classes in common bundles when you need to use them in multiple bundles. (When should classes be in common bundles?)[https://auth.cfengine.com/archive/manuals/cf3-bestpractice#When-should-classes-be-in-common-bundles]
 - Don't duplicate code when you could use parameterized bundles. [When to use a parameterized bundle or method.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#When-to-use-a-paramaterized-bundle-or-method)
+- Classify your system before making changes to it.
 
 ### Do’s and Don’ts
 - Don't make policy changes made when humans aren’t around (e.g. just before going offline for the weekend).
