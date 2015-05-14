@@ -1,23 +1,21 @@
 # CFEngine Health Check
 
-*Purpose*: Provide CFEngineers with a compact checklist for assessing CFEngine health.
+**Purpose**: Provide CFEngineers with a compact checklist for assessing CFEngine health.
 
-This document is based on existing guides and is best used after having studied them.
+This document is based on existing guides - we recommend you read them first.
 
-Author: Aleksey Tsalolikhin
-Contributors: Nick Anderson, Neil Watson
+**Contributors**: Aleksey Tsalolikhin, Nick Anderson, Neil Watson
 
 Feedback and contributions welcome!
 
 ----------------------------
 
-(DO) Do you follow a consistent policy style?
-https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-style.html
------------------------------
-
-Section I - based on “CFEngine 3 Best Practices”, which has since been archived but still has some good tips (https://auth.cfengine.com/archive/manuals/cf3-bestpractice) :
+## Section I
+Section I is based on “CFEngine 3 Best Practices”, which has since been archived but has may great tips (https://auth.cfengine.com/archive/manuals/cf3-bestpractice) :
 
 Policy Style:
+- (Do) Do you follow a consistent policy style?
+See https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-style.html
 -	(Do) Is the policy broken down into separate files, keeping the scope of the policy to manageable amounts, making it easier to understand?
 -	(Do) Are variables defined as close to the place where they are used as possible? (in the current bundle, first and foremost; or in some common bundle for generic, global data.  As opposed to in some other agent bundle -- unless you are passing the variable name as a parameter.) 
 -	(Do) Are bundle names meaningful?  Does the name make clear to a non-expert what the bundle is about?
@@ -62,15 +60,17 @@ Quality Assurance:
 -	(Do) Do you have a “default_repository” defined in case you have to examine history of changes to files managed by CFEngine?
 -	(Do) Do you delegate responsibility if appropriate in your organization? Do you vet and agglomerate policy from different sources?
 
-
-Section II - based on “CFEngine Enterprise Best Practices” (https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html):
+## Section II
+Section II is based on “CFEngine Enterprise Best Practices” (https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html):
 
 -	(Do) Does your CFEngine Hub integrate with a version control repository?  
 -	(Do) Is your source code in version control?  Are you using version control following modern best practices (e.g. branch and merge workflows)?  
 -	(Do) Are you running your CFEngine Postgres database on dedicated SSD for best performance?
 -	(Do) Do you set “splaytime” to reduce load on your hub?
 
-Section III - based on our experience:
+## Section III
+Section III isbased on our experience:
+
 -	Hub server health and server utilization within normal parameters with room to spare
 -	Do you have more than one hub in case your hub dies or has hardware issues?
 -	Do you clean up your hub to remove entries for nodes that have been decommissioned (to improve hub performance and increase readability for humans)?
