@@ -23,12 +23,12 @@ Section I is based on [CFEngine 3 Best Practices][1].
 ### Policy Style
 - (Do) Do you follow a consistent [policy style](https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-style.html)?
 -	(Do) Is the policy broken down into separate files, keeping the scope of the policy to manageable amounts, making it easier to understand?
--	(Do) Are variables defined as close to the place where they are used as possible? (in the current bundle, first and foremost; or in some common bundle for generic, global data.  As opposed to in some other agent bundle -- unless you are passing the variable name as a parameter.) 
--	(Do) Are bundle names meaningful?  Does the name make clear to a non-expert what the bundle is about?
--	(Don’t) Are things bundled together that don’t belong together?  (Are bundles too big?)
--	(Don’t) Is code duplicated instead of using parameterized bundles?
+-	(Do) Are variables defined in the current bundle or in some common bundle for generic global data (unless the bundle was passed a fully qualified variable name when called as a parameterized bundle)? 
+-	(Do) Are bundle names meaningful and make clear to a non-expert what the bundles are about?
 -	(Do) Do you put classes in common bundles when you need to use them in multiple bundles?
 -	(Do) Do you classify your system before starting to configure it?
+-	(Don’t) Are things bundled together that shouldn't be?  (Are your bundles too big?)
+-	(Don’t) Is code duplicated instead of using parameterized bundles?
 
 ### Do’s and Don’ts
 -	(Don’t) Are policy changes made when humans aren’t around (e.g. just before going offline for the weekend?)
@@ -61,8 +61,8 @@ Section I is based on [CFEngine 3 Best Practices][1].
 -	(Do) Are new policy items labeled uniquely for tracking?
 -	(Do) Do you test prior to releasing to production environment?
 -	(Do) Do you test in the production environment on a small number of machines whenever possible?
--	(Do) Do you maintain your policy set's revision number (preferably integrated with your VCS) in body common control using the “version” attribute to make it easily visible which hosts have old policies?
--	(Do) Do you have a “default_repository” defined in case you have to examine history of changes to files managed by CFEngine?
+-	(Do) Do you maintain your policy set's revision number (preferably integrated with your VCS) in body common control using the "version" attribute to make it easily visible which hosts have old policies?
+-	(Do) Do you have a "default_repository" defined in case you have to examine history of changes to files managed by CFEngine?
 -	(Do) Do you delegate responsibility if appropriate in your organization? Do you vet and agglomerate policy from different sources?
 
 ## Section II
