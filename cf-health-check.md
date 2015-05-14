@@ -19,9 +19,9 @@ Feedback and contributions welcome!
 ----------------------------
 
 ## Section I
-Section I is based on “CFEngine 3 Best Practices”, which has since been archived but has may great tips (https://auth.cfengine.com/archive/manuals/cf3-bestpractice) :
+Section I is based on [CFEngine 3 Best Practices][1].
 
-Policy Style:
+### Policy Style:
 - (Do) Do you follow a consistent policy style?
 See https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-style.html
 -	(Do) Is the policy broken down into separate files, keeping the scope of the policy to manageable amounts, making it easier to understand?
@@ -32,7 +32,7 @@ See https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-sty
 -	(Do) Do you put classes in common bundles when you need to use them in multiple bundles?
 -	(Do) Do you classify your system before starting to configure it?
 
-Do’s and Don’ts:
+### Do’s and Don’ts:
 -	(Don’t) Are policy changes made when humans aren’t around (e.g. just before going offline for the weekend?)
 -	(Don’t) Are there shell commands embedded in policy instead of using native CFEngine code which is faster and convergent?
 -	(Don’t) Does your policy maintain cron jobs instead of using CFEngine’s time classes?
@@ -49,7 +49,7 @@ Do’s and Don’ts:
 -	(Do) Do you use system variables to get information about system resources, rather than running external commands?
 -	(Do) Do you use variables as pointers to paths and servers, rather than coding them directly into promises?
 
-Workflows:
+### Workflows:
 -	(Do) Do you monitor for and investigate anomalies to understand and increase system stability?
 -	(Don’t) Do you run batch jobs every time CFEngine runs? (e.g. housekeeping tasks such as updating databases or performing business tasks) In other words, are you failing to use ifelapsed to make sure you don't run external commands too often?
 -	(Do) Do you do garbage collection on your systems? (e.g. removing old log files)
@@ -59,7 +59,7 @@ Workflows:
 -	(Do) Do you have a site security policy? Do you use CFEngine to implement hardening measures, and to monitor important assets?
 -	(Do) Do you use packages (rather than tarballs or building from source) to install software?
 
-Quality Assurance:
+### Quality Assurance:
 -	 (Do) Do you have a policy and schedule concerning major changes?
 -	(Do) Are new policy items labeled uniquely for tracking?
 -	(Do) Do you test prior to releasing to production environment?
