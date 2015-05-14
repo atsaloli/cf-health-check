@@ -91,42 +91,38 @@ Based on our experience.
 ## Section IV
 [Evolve Thinking's Best Practices][3]
 
-````
 ### Testing Best Practices
 
-Start with [simple prototypes](http://evolvethinking.com/cfengine-best-practices-testing/).
-[Check syntax](http://evolvethinking.com/cfengine-best-practices-testing/) with cf-promises.
-[Test formally](http://evolvethinking.com/cfengine-best-practices-testing/), including unit tests.
-Test on multiple architectures. Use reporting for [scale](http://evolvethinking.com/cfengine-best-practices-testing/).
-
+- Start with [simple prototypes](http://evolvethinking.com/cfengine-best-practices-testing/).
+- [Check syntax](http://evolvethinking.com/cfengine-best-practices-testing/) with cf-promises.
+- [Test formally](http://evolvethinking.com/cfengine-best-practices-testing/), including unit tests.
+- Test on multiple architectures. Use reporting for [scale](http://evolvethinking.com/cfengine-best-practices-testing/).
 
 ### More
-Do not think procedurally, instead declare your intentions as CFEngine promises.
-Less is more, leave decisions on how to do something to CFEngine.
-Focus on the end goal, not the procedure.
-Build reusable bundles.
-Separation data from policy.
-Promise whole files and not just a portion of a file.
-Make your policy readable.
-Use naming conventions for bundles, handles, and classes.
-Use separate promises for file permissions and content.
-Embrace normal ordering.
-Use shell commands sparingly.
-Beware the shell environment.
-Don’t use command promises to cheat.
-Avoid promises that are too broad.
-Don’t mess with update.cf or failsafe.cf
+- Do not think procedurally, instead declare your intentions as CFEngine promises.
+- Less is more, leave decisions on how to do something to CFEngine.
+- Focus on the end goal, not the procedure.
+- Build reusable bundles.
+- Separation data from policy.
+- Promise whole files and not just a portion of a file.
+- Make your policy readable.
+- Use naming conventions for bundles, handles, and classes.
+- Use separate promises for file permissions and content.
+- Embrace normal ordering.
+- Use shell commands sparingly.
+- Beware the shell environment.
+- Don’t use command promises to cheat.
+- Avoid promises that are too broad.
+- Don’t mess with update.cf or failsafe.cf
 
 ### And more
-Use version control, everywhere.
-CFEngine 2 and 3 can run in parallel for gradual migration.
-Upgrade policy and CFEngine 3 with extensive planning and testing.
-Use splaytime and ifelasped to reduce agent and server load.
-Make CFEngine policy servers in redundant pairs.
-Make policy reliable even when the server is unavailable.
-You can limit selected inputs to agents, but do so with caution.
-
-````
+- Use version control, everywhere.
+- CFEngine 2 and 3 can run in parallel for gradual migration.
+- Upgrade policy and CFEngine 3 with extensive planning and testing.
+- Use splaytime and ifelasped to reduce agent and server load.
+- Make CFEngine policy servers in redundant pairs.
+- Make policy reliable even when the server is unavailable.
+- You can limit selected inputs to agents, but do so with caution.
 
 ## TODO
 When this document settles down, open a pull request to
