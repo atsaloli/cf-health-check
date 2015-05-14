@@ -34,7 +34,7 @@ This document is based on the following best-practice guides:
 
 ### Make and Use Libraries
 - Don't duplicate code when you could use parameterized bundles. [When to use a parameterized bundle or method.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#When-to-use-a-paramaterized-bundle-or-method) [Build reusable bundles.](http://evolvethinking.com/cfengine-best-practices-part-2/)
-- Don't reinvent the wheel. [CFEngine Standard Library](https://auth.cfengine.com/manuals/cf3-bestpractice#Always-use-existing-templates) [Use frameworks](http://evolvethinking.com/cfengine-best-practices-part-2/
+- Don't reinvent the wheel. [CFEngine Standard Library](https://auth.cfengine.com/manuals/cf3-bestpractice#Always-use-existing-templates) [Use frameworks](http://evolvethinking.com/cfengine-best-practices-part-2/)
 - Keep a site library instead of modifying CFEngine Standard Library.
 
 
