@@ -19,8 +19,6 @@ This document is based on the following best-practice guides:
 - Joe Moore
 
 ## Writing Policy
-- Use editor plugins to provide syntax highlighting to catch errors early.
-- Use a pre-commit hook to catch errors. Or use automated testing of policy (Jenkins, etc.) before distributing it.
 
 ### Thinking CFEngine
 - Do not think procedurally, instead declare your intentions as CFEngine promises. http://evolvethinking.com/cfengine-best-practices-part-2/
@@ -68,6 +66,7 @@ This document is based on the following best-practice guides:
 - [Try to combine tests and operations during file searches](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Try-to-combine-tests-and-operations-during-file-searches)
 
 ### Misc.
+- Start with [simple prototypes](http://evolvethinking.com/cfengine-best-practices-testing/).
 - [Don't maintain cron jobs - use CFEngine's time classes. [Never manage more than one cron job](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-manage-more-than-one-cron-job)
 - Separate data from policy. http://evolvethinking.com/cfengine-best-practices-part-2/
 
@@ -118,10 +117,10 @@ This document is based on the following best-practice guides:
 - Make CFEngine policy servers in redundant pairs. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
 
 
-## Testing Best Practices
+## Quality Control / Testing 
 
-- Start with [simple prototypes](http://evolvethinking.com/cfengine-best-practices-testing/).
-- [Check syntax](http://evolvethinking.com/cfengine-best-practices-testing/) with cf-promises.
+- Use editor plugins to provide syntax highlighting to catch errors early.
+- Use a pre-commit hook to catch errors early. Or use automated testing of policy (Jenkins, etc.) before distributing it. [Check syntax with cf-promises](http://evolvethinking.com/cfengine-best-practices-testing/)
 - Try to [test formally](http://evolvethinking.com/cfengine-best-practices-testing/), including unit tests.
 - Test on multiple architectures. Use reporting for [scale](http://evolvethinking.com/cfengine-best-practices-testing/).
 
