@@ -18,8 +18,7 @@ This document is based on the following best-practice guides:
 - Neil Watson
 - Joe Moore
 
-## Section I
-Based on [CFEngine 3 Best Practices][1].
+## Section I - Based on [CFEngine 3 Best Practices][1]
 
 ### Policy Style
 - Follow a consistent [policy style](https://docs.cfengine.com/latest/guide-writing-and-serving-policy-policy-style.html).
@@ -67,16 +66,14 @@ Based on [CFEngine 3 Best Practices][1].
 - Consider a ["default_repository"](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Configuration-version-control-and-rollback) in case you have to examine history of changes to files managed by CFEngine.
 - [Delegate responsibility](https://auth.cfengine.com/manuals/cf3-bestpractice#Delegating-responsibility) if appropriate in your organization. Vet and agglomerate policy from different sources.
 
-## Section II
-Based on [CFEngine Enterprise Best Practices][2].
+## Section II - Based on [CFEngine Enterprise Best Practices][2]
 
 - Use [branch and merge workflows](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
 - Setup your policy hub to update "masterfiles" from Version Control to [automate policy distribution](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#version-control-and-configuration-policy).
 - Run your CFEngine Postgres database on a [dedicated SSD](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#scalability) for best performance.
 - Set ["splaytime"](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#scalability) to reduce load on your hub.
 
-## Section III
-Based on our experience.
+## Section III - Based on our experience
 
 - Monitor Hub server utilization to make sure it's within normal parameters with room to spare.
 - Have more than one hub in case your hub dies or has hardware issues, of the same grade of hardware so it can handle full production load.
@@ -88,8 +85,7 @@ Based on our experience.
 - Learn CFEngine (from "Learning CFEngine 3" book, online documentation and trainings, and professional training, etc.).
 - Don't put secrets in your policy. Use cf-keycrypt, a password vault or GPG to secure your secrets.
 
-## Section IV
-[Evolve Thinking's Best Practices][3]
+## Section IV - based on [Evolve Thinking's Best Practices][3]
 
 ### Testing Best Practices
 
