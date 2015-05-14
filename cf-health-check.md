@@ -1,11 +1,13 @@
-Purpose: My intent is NOT to compete with existing best-practice guides, but to make 
-a COMPACT document BASED ON EXISTING GUIDE, for use by CFEngine wizards in thoroughly 
-assessing CFEngine health at any organization.
+# CFEngine Health Check
+
+Purpose: Provide CFEngineers with a compact checklist for assessing CFEngine health.
+
+This document is based on existing guides and is best used after having studied them.
 
 Author: Aleksey Tsalolikhin
 Contributors: Nick Anderson, Neil Watson
 
-Feedback welcome!
+Feedback and contributions welcome!
 
 ----------------------------
 
