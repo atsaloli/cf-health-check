@@ -31,40 +31,41 @@ Based on [CFEngine 3 Best Practices][1].
 - Classify your system before making changes to it.
 
 ### Do’s and Don’ts
-- Don't make policy changes made when humans aren’t around (e.g. just before going offline for the weekend).
-- Don't embed shell commands in policy when you could use native CFEngine code.
-- Don't maintain cron jobs - use CFEngine's time classes.
-- Don't run CFEngine without lock protection (cf-agent -K).
-- When doing file searches, combine operations to reduce load.
-- Make many small changes rather than one large change to reduce risk.
-- Use "comment" attributes to explain the intention of your promises.
+- [Never change system policy when humans are absent](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-change-system-policy-when-humans-are-absent)
+- Don't embed shell commands in policy when you could use native CFEngine code.  [Never embed simple shell commands.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-embed-simple-shell-commands) [Avoid writing custom scripts](https://auth.cfengine.com/manuals/cf3-bestpractice#Avoid-writing-custom-scripts)
+- Don't maintain cron jobs - use CFEngine's time classes. [Never manage more than one cron job](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-manage-more-than-one-cron-job)
+- [Avoid running CFEngine without lock protection](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Avoid-running-CFEngine-without-lock-protection)
+- [Try to combine tests and operations during file searches](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Try-to-combine-tests-and-operations-during-file-searches)
+- [Try to make many small changes rather than one large change to reduce risk.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Try-to-make-many-small-changes)
+- [Always document the intention of your promises using "comment" attribute.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Always-document-promises)
 - Use "promisees" to document who or what will be impacted by your promises.
-- Use "meta" promises and attributes to document metadata such as who wrote the code, etc.. (e.g. meta => { "author=John Smith", "version="2.0" }; ) 
-- Don't try to control the order of execution in your policy. Don't fight Normal Ordering.
-- Use lists to make the same promise about multiple objects, rather than coding the same promise many times.
-- Use the CFEngine Standard Library rather than re-inventing the wheel.
-- Use CFEngine policy frameworks (NCF or EFL) to add functionality and make it easier and safer for your system administrators to create new policies.
-- Use system variables to get information about system resources, rather than running external commands.
-- Use variables as pointers to paths and servers, rather than coding them directly into promises.
+- Use "meta" promises and attributes to document metadata such as who wrote the code, when, etc. (e.g. meta => { "author=John Smith", "version="2.0" }; ) 
+- Don't try to control the order of execution in your policy. Don't fight Normal Ordering. [Always keep coding to a minimum.](https://auth.cfengine.com/manuals/cf3-bestpractice#Always-keep-coding-to-a-minimum)
+- [Always use lists to make the same promise about multiple objects.](https://auth.cfengine.com/manuals/cf3-bestpractice#Always-use-lists-to-make-the-same-promise-about-multiple-objects)
+- [Always use the CFEngine Standard Library rather than re-invent the wheel.](https://auth.cfengine.com/manuals/cf3-bestpractice#Always-use-existing-templates)
+- Consider using CFEngine policy frameworks (e.g. NCF, EFL) to add functionality and make it easier and safer for your system administrators to create new policies.
+- [Always use system variables to get information about system resources, rather than running external commands.](https://auth.cfengine.com/manuals/cf3-bestpractice#Always-use-the-system-variables-for-system-resources)
+- [Use variables as pointers to paths and servers, rather than coding them directly into promises.](https://auth.cfengine.com/manuals/cf3-bestpractice#Always-use-variables-as-pointers-to-paths-and-servers)
 
 ### Workflows
-- Use cf-monitord to detect and investigate anomalies to understand and increase system stability.
-- Don’t run housekeeping tasks (such as updating databases or performing business tasks) every time CFEngine runs. Use "ifelapsed".
-- Collect garbage on your systems (e.g. remove old log files)
-- Manage name service (/etc/resolv.conf)
-- Have a policy definition point for your system, to facilitate distributing policy updates.
-- Use CFEngine to ensure your services stay up and running, or to take down services that should not be running.
-- Have a site security policy. Use CFEngine to implement hardening measures, and to monitor important assets.
-- Use packages (rather than tarballs or building from source) to install software.
+- [Use cf-monitord to detect and investigate anomalies to understand and increase system stability.](https://auth.cfengine.com/manuals/cf3-bestpractice#Anomaly-Monitoring)
+- [Don't run housekeeping tasks (such as updating databases or performing business tasks) every time CFEngine runs. Use "ifelapsed".](https://auth.cfengine.com/manuals/cf3-bestpractice#Batch-Jobs)
+- [Collect garbage on your systems (e.g. remove old log files)](https://auth.cfengine.com/manuals/cf3-bestpractice#Garbage-Collection)
+- [Manage name service (/etc/resolv.conf)](https://auth.cfengine.com/manuals/cf3-bestpractice#Name-Service)
+- [Have a policy definition point for your system, to facilitate distributing policy updates.](https://auth.cfengine.com/manuals/cf3-bestpractice#Policy-Distribution)
+- [Use CFEngine to ensure your services stay up and running, or to take down services that should not be running.](https://auth.cfengine.com/manuals/cf3-bestpractice#Services)
+- [Have a site security policy. Use CFEngine to implement hardening measures, and to monitor important assets.](https://auth.cfengine.com/manuals/cf3-bestpractice#Security)
+- [Use packages (rather than tarballs or building from source) to install software.](https://auth.cfengine.com/manuals/cf3-bestpractice#Software-Management)
 
-### Quality Assurance
+### Changes / Quality Assurance https://auth.cfengine.com/manuals/cf3-bestpractice#Policy-changes
+- [Think through your changes](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
 - Have a policy and schedule concerning major changes.
 - Label new policy items uniquely for tracking.
 - Test prior to releasing to production environment.
 - Test in the production environment on a small number of machines whenever possible.
-- Develop a process for deploying changes as progressive waves to decrease risk.
-- Define a "default_repository" in case you have to examine history of changes to files managed by CFEngine.
-- Delegate responsibility if appropriate in your organization. Vet and agglomerate policy from different sources.
+- Develop a process for deploying changes in progressive waves to decrease risk.
+- Consider a ["default_repository"](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Configuration-version-control-and-rollback) in case you have to examine history of changes to files managed by CFEngine.
+- [Delegate responsibility](https://auth.cfengine.com/manuals/cf3-bestpractice#Delegating-responsibility) if appropriate in your organization. Vet and agglomerate policy from different sources.
 
 ## Section II
 Based on [CFEngine Enterprise Best Practices][2].
