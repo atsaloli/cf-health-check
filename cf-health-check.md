@@ -98,7 +98,7 @@ This document is based on the following best-practice guides:
 - Don't install CFEngine RPM onto an image and then "bake" and deploy the image, as your nodes will have the same key which will cause management headaches and performance issues. Install CFEngine during node initialization.
 
 ## Collaborating with others
-- Use [branch and merge workflows](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
+- Use [branch and merge](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) workflows.
 - [Delegate responsibility](https://auth.cfengine.com/manuals/cf3-bestpractice#Delegating-responsibility) if appropriate in your organization. Vet and agglomerate policy from different sources.
 
 
