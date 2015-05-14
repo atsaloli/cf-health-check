@@ -68,9 +68,10 @@ Section I is based on [CFEngine 3 Best Practices][1].
 ## Section II
 Section II is based on [CFEngine Enterprise Best Practices][2].
 
--	(Do) Is your source code in version control?  Are you using version control following modern best practices (e.g. [branch and merge workflows](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging))?  
--	(Do) Does your Hub integrate with a version control repository so that your "masterfiles" are automically updated to the latest version?  
--	(Do) Are you running your CFEngine Postgres database on dedicated SSD for best performance?
+-	(Do) Is your source code in version control?  
+-	(Do) Are you following modern best practices for your version control (e.g. [branch and merge workflows](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging))?  
+-	(Do) Does your hub automatically update "masterfiles" from the Version Control System?  
+-	(Do) Are you running your CFEngine Postgres database on a dedicated SSD for best performance?
 -	(Do) Do you set "splaytime" to reduce load on your hub?
 
 ## Section III
