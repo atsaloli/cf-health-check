@@ -57,7 +57,7 @@ Based on [CFEngine 3 Best Practices][1].
 - [Have a site security policy. Use CFEngine to implement hardening measures, and to monitor important assets.](https://auth.cfengine.com/manuals/cf3-bestpractice#Security)
 - [Use packages (rather than tarballs or building from source) to install software.](https://auth.cfengine.com/manuals/cf3-bestpractice#Software-Management)
 
-### Changes / Quality Assurance https://auth.cfengine.com/manuals/cf3-bestpractice#Policy-changes
+### Changes / Quality Assurance
 - [Think through your changes](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
 - Have a policy and schedule concerning major changes.
 - Label new policy items uniquely for tracking.
@@ -70,11 +70,10 @@ Based on [CFEngine 3 Best Practices][1].
 ## Section II
 Based on [CFEngine Enterprise Best Practices][2].
 
-- Keep your source code in version control.
 - Use [branch and merge workflows](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
-- Setup your hub to update "masterfiles" from Version Control to automate policy distribution.
-- Run your CFEngine Postgres database on a dedicated SSD for best performance.
-- Set "splaytime" to reduce load on your hub.
+- Setup your policy hub to update "masterfiles" from Version Control to [automate policy distribution](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#version-control-and-configuration-policy).
+- Run your CFEngine Postgres database on a [dedicated SSD](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#scalability) for best performance.
+- Set ["splaytime"](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#scalability) to reduce load on your hub.
 
 ## Section III
 Based on our experience.
