@@ -97,6 +97,7 @@ Neil Watson suggested we review [Evolve Thinking's Best Practices][3] to see wha
 
 Here is a summary of Neil's Best Practices:
 
+````
 Testing Best Practices
 
 Start with simple prototypes.
@@ -133,6 +134,7 @@ Make CFEngine policy servers in redundant pairs.
 Make policy reliable even when the server is unavailable.
 You can limit selected inputs to agents, but do so with caution.
 
+````
 
 Also Neil suggested dropping the questioning style and changing
 to an assertive style.
