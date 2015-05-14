@@ -65,10 +65,20 @@ This document is based on the following best-practice guides:
 - Promise whole files and not just a portion of a file. http://evolvethinking.com/cfengine-best-practices-part-2/
 - [Try to combine tests and operations during file searches](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Try-to-combine-tests-and-operations-during-file-searches)
 
+### Collaborating with others
+- Use [branch and merge](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) workflows.
+- [Delegate responsibility](https://auth.cfengine.com/manuals/cf3-bestpractice#Delegating-responsibility) if appropriate in your organization. Vet and agglomerate policy from different sources.
+
+### Handling secrets
+- Don't put secrets in your policy. Use cf-keycrypt, a password vault or GPG to secure your secrets. http://cfengine.com/wp-content/uploads/2015/02/cfgcamp-2015.pdf
+- If you put secrets in your policy, you can limit selected inputs to agents, but do so with caution. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
+
 ### Misc.
+- Use version control, everywhere. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
 - Start with [simple prototypes](http://evolvethinking.com/cfengine-best-practices-testing/).
 - Don't maintain cron jobs - use CFEngine's time classes. [Never manage more than one cron job](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-manage-more-than-one-cron-job)
 - Separate data from policy. http://evolvethinking.com/cfengine-best-practices-part-2/
+- Make policy reliable even when the server is unavailable. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
 
 
 ## Making Changes
@@ -83,6 +93,32 @@ This document is based on the following best-practice guides:
 - Develop a process for deploying changes in progressive waves to decrease risk.
 - Consider a ["default_repository"](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Configuration-version-control-and-rollback) in case you have to examine history of changes to files managed by CFEngine.
 
+## Quality Control / Testing 
+
+- Use editor plugins to provide syntax highlighting to catch errors early.
+- Use a pre-commit hook to catch errors early. Or use automated testing of policy (Jenkins, etc.) before distributing it. [Check syntax with cf-promises](http://evolvethinking.com/cfengine-best-practices-testing/)
+- Try to [test formally](http://evolvethinking.com/cfengine-best-practices-testing/), including unit tests.
+- Test on multiple architectures. Use reporting for [scale](http://evolvethinking.com/cfengine-best-practices-testing/).
+
+
+
+
+## Hub health
+- Run your CFEngine Postgres database on a [dedicated SSD](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#scalability) for best performance.
+- Set ["splaytime"](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#scalability) to reduce load on your hub.
+- Monitor Hub server utilization to make sure it's within normal parameters with room to spare.
+- Have more than one hub in case your hub dies or has hardware issues, of the same grade of hardware so it can handle full production load.
+- Clean up your hub to remove entries for nodes that have been decommissioned (to improve hub performance and increase readability for humans).
+- Use splaytime and ifelasped to reduce agent and server load. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
+- Make CFEngine policy servers in redundant pairs. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
+- Try to stay up to date on your CFEngine software version as the software is continously improved.
+
+
+### Upgrades
+- CFEngine 2 and 3 can run in parallel for gradual migration. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
+- Upgrade policy and CFEngine 3 with extensive planning and testing. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
+
+
 
 ## Workflows - how you should and should not do use CFEngine
 - [Use cf-monitord to detect and investigate anomalies to understand and increase system stability.](https://auth.cfengine.com/manuals/cf3-bestpractice#Anomaly-Monitoring)
@@ -96,46 +132,7 @@ This document is based on the following best-practice guides:
 - [Avoid running CFEngine without lock protection](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Avoid-running-CFEngine-without-lock-protection)
 - Always monitor promise compliance and investigate non-compliances.
 - Don't install CFEngine RPM onto an image and then "bake" and deploy the image, as your nodes will have the same key which will cause management headaches and performance issues. Install CFEngine during node initialization.
-
-## Collaborating with others
-- Use [branch and merge](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) workflows.
-- [Delegate responsibility](https://auth.cfengine.com/manuals/cf3-bestpractice#Delegating-responsibility) if appropriate in your organization. Vet and agglomerate policy from different sources.
-
-
-
-## Policy Distribution
-
 - Setup your policy hub to update "masterfiles" from Version Control to [automate policy distribution](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#version-control-and-configuration-policy).
-
-## Hub health
-- Run your CFEngine Postgres database on a [dedicated SSD](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#scalability) for best performance.
-- Set ["splaytime"](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#scalability) to reduce load on your hub.
-- Monitor Hub server utilization to make sure it's within normal parameters with room to spare.
-- Have more than one hub in case your hub dies or has hardware issues, of the same grade of hardware so it can handle full production load.
-- Clean up your hub to remove entries for nodes that have been decommissioned (to improve hub performance and increase readability for humans).
-- Use splaytime and ifelasped to reduce agent and server load. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
-- Make CFEngine policy servers in redundant pairs. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
-- Try to stay up to date on your CFEngine software version as the software is continously improved.
-
-
-## Quality Control / Testing 
-
-- Use editor plugins to provide syntax highlighting to catch errors early.
-- Use a pre-commit hook to catch errors early. Or use automated testing of policy (Jenkins, etc.) before distributing it. [Check syntax with cf-promises](http://evolvethinking.com/cfengine-best-practices-testing/)
-- Try to [test formally](http://evolvethinking.com/cfengine-best-practices-testing/), including unit tests.
-- Test on multiple architectures. Use reporting for [scale](http://evolvethinking.com/cfengine-best-practices-testing/).
-
-
-### Deployment, Upgrades and Scaling
-- Use version control, everywhere. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
-- CFEngine 2 and 3 can run in parallel for gradual migration. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
-- Upgrade policy and CFEngine 3 with extensive planning and testing. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
-- Make policy reliable even when the server is unavailable. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
-
-## Handling secrets
-- You can limit selected inputs to agents, but do so with caution. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
-- Don't put secrets in your policy. Use cf-keycrypt, a password vault or GPG to secure your secrets. http://cfengine.com/wp-content/uploads/2015/02/cfgcamp-2015.pdf
-
 
 
 ## TODO
