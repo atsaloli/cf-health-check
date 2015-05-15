@@ -79,19 +79,9 @@ This document is based on the following best-practice guides:
 - Don't maintain cron jobs - use CFEngine's time classes. [Never manage more than one cron job](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-manage-more-than-one-cron-job)
 - Separate data from policy. http://evolvethinking.com/cfengine-best-practices-part-2/
 - Make policy reliable even when the server is unavailable. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
-
-
-## Making Changes
 - Don't mess with update.cf or failsafe.cf http://evolvethinking.com/cfengine-best-practices-part-2/
-- [Never change system policy when humans are absent](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-change-system-policy-when-humans-are-absent)
-- [Try to make many small changes rather than one large change to reduce risk.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Try-to-make-many-small-changes)
-- [Think through your changes](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
-- [Have a policy and schedule concerning major changes.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
 - [Label new policy items uniquely for tracking.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
-- [Test prior to releasing to production environment.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
-- [Test in the production environment on a small number of machines whenever possible.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
-- Develop a process for deploying changes in progressive waves to decrease risk.
-- Consider a ["default_repository"](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Configuration-version-control-and-rollback) in case you have to examine history of changes to files managed by CFEngine.
+
 
 ## Quality Control / Testing 
 
@@ -101,6 +91,17 @@ This document is based on the following best-practice guides:
 - Test on multiple architectures. Use reporting for [scale](http://evolvethinking.com/cfengine-best-practices-testing/).
 
 
+
+## Making Changes to Production
+
+- [Never change system policy when humans are absent](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-change-system-policy-when-humans-are-absent)
+- [Try to make many small changes rather than one large change to reduce risk.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Try-to-make-many-small-changes)
+- [Think through your changes](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
+- [Have a policy and schedule concerning major changes.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
+- [Test prior to releasing to production environment.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
+- [Test in the production environment on a small number of machines whenever possible.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
+- Develop a process for deploying changes in progressive waves to decrease risk.
+- Consider a ["default_repository"](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Configuration-version-control-and-rollback) in case you have to examine history of changes to files managed by CFEngine.
 
 
 ## Hub health
@@ -120,7 +121,7 @@ This document is based on the following best-practice guides:
 
 
 
-## Workflows - how you should and should not do use CFEngine
+## Using CFEngine
 - [Use cf-monitord to detect and investigate anomalies to understand and increase system stability.](https://auth.cfengine.com/manuals/cf3-bestpractice#Anomaly-Monitoring)
 - [Don't run housekeeping tasks (such as updating databases or performing business tasks) every time CFEngine runs. Use "ifelapsed".](https://auth.cfengine.com/manuals/cf3-bestpractice#Batch-Jobs)
 - [Collect garbage on your systems (e.g. remove old log files)](https://auth.cfengine.com/manuals/cf3-bestpractice#Garbage-Collection)
