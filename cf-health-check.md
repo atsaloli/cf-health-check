@@ -110,7 +110,6 @@ This document is based on the following best-practice guides:
 - Monitor Hub server utilization to make sure it's within normal parameters with room to spare.
 - Have more than one hub in case your hub dies or has hardware issues, of the same grade of hardware so it can handle full production load.
 - Clean up your hub to remove entries for nodes that have been decommissioned (to improve hub performance and increase readability for humans).
-- Use splaytime and ifelasped to reduce agent and server load. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
 - Make CFEngine policy servers in redundant pairs. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
 - Try to stay up to date on your CFEngine software version as the software is continously improved.
 
