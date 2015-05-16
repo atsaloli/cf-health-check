@@ -80,12 +80,12 @@ This document is based on the following best-practice guides:
 - [Ensure your services stay up and running, or to take down services that should not be running.](https://auth.cfengine.com/manuals/cf3-bestpractice#Services)
 - [Use packages (rather than tarballs or building from source) to install software.](https://auth.cfengine.com/manuals/cf3-bestpractice#Software-Management)
 - [Avoid running CFEngine without lock protection](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Avoid-running-CFEngine-without-lock-protection)
+- Don't maintain cron jobs - use CFEngine's time classes. [Never manage more than one cron job](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-manage-more-than-one-cron-job)
 
 
 ### Misc.
 - Use version control, everywhere. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
 - Start with [simple prototypes](http://evolvethinking.com/cfengine-best-practices-testing/).
-- Don't maintain cron jobs - use CFEngine's time classes. [Never manage more than one cron job](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-manage-more-than-one-cron-job)
 - Separate data from policy. http://evolvethinking.com/cfengine-best-practices-part-2/
 - Make policy reliable even when the server is unavailable. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
 - Don't mess with update.cf or failsafe.cf http://evolvethinking.com/cfengine-best-practices-part-2/
