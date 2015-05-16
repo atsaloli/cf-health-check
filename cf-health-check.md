@@ -77,7 +77,7 @@ This document is based on the following best-practice guides:
 - Use "ifelapsed" to reduce frequency of housekeeping tasks (such as updating databases or performing business tasks) to reduce agent load. (https://auth.cfengine.com/manuals/cf3-bestpractice#Batch-Jobs)
 - [Collect garbage on your systems (e.g. remove old log files)](https://auth.cfengine.com/manuals/cf3-bestpractice#Garbage-Collection)
 - [Manage name service (/etc/resolv.conf)](https://auth.cfengine.com/manuals/cf3-bestpractice#Name-Service)
-- [Use CFEngine to ensure your services stay up and running, or to take down services that should not be running.](https://auth.cfengine.com/manuals/cf3-bestpractice#Services)
+- [Ensure your services stay up and running, or to take down services that should not be running.](https://auth.cfengine.com/manuals/cf3-bestpractice#Services)
 - [Use packages (rather than tarballs or building from source) to install software.](https://auth.cfengine.com/manuals/cf3-bestpractice#Software-Management)
 - [Avoid running CFEngine without lock protection](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Avoid-running-CFEngine-without-lock-protection)
 
