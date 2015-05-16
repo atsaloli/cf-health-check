@@ -73,6 +73,16 @@ This document is based on the following best-practice guides:
 - Don't put secrets in your policy. Use cf-keycrypt, a password vault or GPG to secure your secrets. http://cfengine.com/wp-content/uploads/2015/02/cfgcamp-2015.pdf
 - If you put secrets in your policy, you can limit selected inputs to agents, but do so with caution. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
 
+### Smart system administration
+- Use "ifelapsed" to reduce frequency of housekeeping tasks (such as updating databases or performing business tasks) to reduce agent load. (https://auth.cfengine.com/manuals/cf3-bestpractice#Batch-Jobs)
+- [Collect garbage on your systems (e.g. remove old log files)](https://auth.cfengine.com/manuals/cf3-bestpractice#Garbage-Collection)
+- [Manage name service (/etc/resolv.conf)](https://auth.cfengine.com/manuals/cf3-bestpractice#Name-Service)
+- [Use CFEngine to ensure your services stay up and running, or to take down services that should not be running.](https://auth.cfengine.com/manuals/cf3-bestpractice#Services)
+- [Use packages (rather than tarballs or building from source) to install software.](https://auth.cfengine.com/manuals/cf3-bestpractice#Software-Management)
+- [Have a site security policy. Use CFEngine to implement hardening measures, and to monitor important assets.](https://auth.cfengine.com/manuals/cf3-bestpractice#Security)
+- [Avoid running CFEngine without lock protection](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Avoid-running-CFEngine-without-lock-protection)
+
+
 ### Misc.
 - Use version control, everywhere. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
 - Start with [simple prototypes](http://evolvethinking.com/cfengine-best-practices-testing/).
@@ -82,7 +92,6 @@ This document is based on the following best-practice guides:
 - Don't mess with update.cf or failsafe.cf http://evolvethinking.com/cfengine-best-practices-part-2/
 - [Label new policy items uniquely for tracking.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
 
-
 ## Quality Control / Testing 
 
 - Use editor plugins to provide syntax highlighting to catch errors early.
@@ -91,17 +100,20 @@ This document is based on the following best-practice guides:
 - Test on multiple architectures. Use reporting for [scale](http://evolvethinking.com/cfengine-best-practices-testing/).
 
 
-
 ## Making Changes to Production
 
+### Preparation
+- Consider a ["default_repository"](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Configuration-version-control-and-rollback) in case you have to examine history of changes to files managed by CFEngine.
+- [Test prior to releasing to production environment.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
+- [Have a policy and schedule concerning major changes.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
+- [Automate policy distribution](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#version-control-and-configuration-policy) by setting up your policy hub to update "masterfiles" from Version Control.
+- [Think through your changes](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
+
+### Execution
 - [Never change system policy when humans are absent](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Never-change-system-policy-when-humans-are-absent)
 - [Try to make many small changes rather than one large change to reduce risk.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Try-to-make-many-small-changes)
-- [Think through your changes](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
-- [Have a policy and schedule concerning major changes.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
-- [Test prior to releasing to production environment.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
 - [Test in the production environment on a small number of machines whenever possible.](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Policy-changes)
-- Develop a process for deploying changes in progressive waves to decrease risk.
-- Consider a ["default_repository"](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Configuration-version-control-and-rollback) in case you have to examine history of changes to files managed by CFEngine.
+- Deploy changes in progressive waves to decrease risk.
 
 
 ## Hub health
@@ -112,7 +124,7 @@ This document is based on the following best-practice guides:
 - Make CFEngine policy servers in redundant pairs. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
 - Clean up your hub to remove entries for nodes that have been decommissioned (to improve hub performance and increase readability for humans).
 - Try to stay up to date on your CFEngine software version as the software is continously improved.
-
+- Don't install CFEngine RPM onto an image and then "bake" and deploy the image; same key on nodes = management headaches and hub performance issues. 
 
 ### Upgrades
 - CFEngine 2 and 3 can run in parallel for gradual migration. http://evolvethinking.com/cfengine-best-practices-deployment-upgrades-and-scaling/
@@ -120,19 +132,10 @@ This document is based on the following best-practice guides:
 
 
 
-## Using CFEngine
+## Using CFEngine (Workflows)
 - [Use cf-monitord to detect and investigate anomalies to understand and increase system stability.](https://auth.cfengine.com/manuals/cf3-bestpractice#Anomaly-Monitoring)
-- [Don't run housekeeping tasks (such as updating databases or performing business tasks) every time CFEngine runs. Use "ifelapsed".](https://auth.cfengine.com/manuals/cf3-bestpractice#Batch-Jobs)
-- [Collect garbage on your systems (e.g. remove old log files)](https://auth.cfengine.com/manuals/cf3-bestpractice#Garbage-Collection)
-- [Manage name service (/etc/resolv.conf)](https://auth.cfengine.com/manuals/cf3-bestpractice#Name-Service)
-- [Have a policy definition point for your system, to facilitate distributing policy updates.](https://auth.cfengine.com/manuals/cf3-bestpractice#Policy-Distribution)
-- [Use CFEngine to ensure your services stay up and running, or to take down services that should not be running.](https://auth.cfengine.com/manuals/cf3-bestpractice#Services)
-- [Have a site security policy. Use CFEngine to implement hardening measures, and to monitor important assets.](https://auth.cfengine.com/manuals/cf3-bestpractice#Security)
-- [Use packages (rather than tarballs or building from source) to install software.](https://auth.cfengine.com/manuals/cf3-bestpractice#Software-Management)
-- [Avoid running CFEngine without lock protection](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Avoid-running-CFEngine-without-lock-protection)
 - Always monitor promise compliance and investigate non-compliances.
-- Don't install CFEngine RPM onto an image and then "bake" and deploy the image, as your nodes will have the same key which will cause management headaches and performance issues. Install CFEngine during node initialization.
-- Setup your policy hub to update "masterfiles" from Version Control to [automate policy distribution](https://docs.cfengine.com/latest/enterprise-cfengine-guide-best-practices.html#version-control-and-configuration-policy).
+- Try to monitor promise repairs to increase system stability.
 
 
 ## TODO
