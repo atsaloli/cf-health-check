@@ -79,7 +79,6 @@ This document is based on the following best-practice guides:
 - [Manage name service (/etc/resolv.conf)](https://auth.cfengine.com/manuals/cf3-bestpractice#Name-Service)
 - [Use CFEngine to ensure your services stay up and running, or to take down services that should not be running.](https://auth.cfengine.com/manuals/cf3-bestpractice#Services)
 - [Use packages (rather than tarballs or building from source) to install software.](https://auth.cfengine.com/manuals/cf3-bestpractice#Software-Management)
-- [Have a site security policy. Use CFEngine to implement hardening measures, and to monitor important assets.](https://auth.cfengine.com/manuals/cf3-bestpractice#Security)
 - [Avoid running CFEngine without lock protection](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Avoid-running-CFEngine-without-lock-protection)
 
 
@@ -132,10 +131,11 @@ This document is based on the following best-practice guides:
 
 
 
-## Using CFEngine (Workflows)
+## Using CFEngine
 - [Use cf-monitord to detect and investigate anomalies to understand and increase system stability.](https://auth.cfengine.com/manuals/cf3-bestpractice#Anomaly-Monitoring)
 - Always monitor promise compliance and investigate non-compliances.
 - Try to monitor promise repairs to increase system stability.
+- [Have a site security policy. Use CFEngine to implement hardening measures, and to monitor important assets.](https://auth.cfengine.com/manuals/cf3-bestpractice#Security)
 
 
 ## TODO
