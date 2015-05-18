@@ -66,7 +66,7 @@ This document is based on the following best-practice guides:
 - [Try to combine tests and operations during file searches](https://auth.cfengine.com/archive/manuals/cf3-bestpractice#Try-to-combine-tests-and-operations-during-file-searches)
 
 ### Collaborating with others
-- Use [branch and merge](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) workflows.
+- Use [branch and merge](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) workflows. See also GitHub branch and merge [howto](https://guides.github.com/introduction/flow/).
 - [Delegate responsibility](https://auth.cfengine.com/manuals/cf3-bestpractice#Delegating-responsibility) if appropriate in your organization. Vet and agglomerate policy from different sources.
 
 ### Handling secrets
